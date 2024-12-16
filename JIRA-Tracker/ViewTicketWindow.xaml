@@ -1,0 +1,38 @@
+﻿<Window x:Class="JIRA_Tracker.ViewTicketWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:JIRA_Tracker"
+        mc:Ignorable="d"
+        Title="ViewTicketWindow" Height="525" Width="800">
+    <Grid>
+        <StackPanel Margin="10">
+            <TextBlock Text="Ticket Details" FontSize="16" FontWeight="Bold" Margin="0,0,0,10" />
+
+            <TextBlock Text="Title:" FontWeight="Bold" />
+            <TextBlock x:Name="TitleBlock" Margin="0,0,0,10" />
+
+            <TextBlock Text="Submitter:" FontWeight="Bold" />
+            <TextBlock x:Name="AuthorBlock" Margin="0,0,0,10" />
+
+            <TextBlock Text="Description:" FontWeight="Bold" />
+            <TextBlock x:Name="DescriptionBlock" TextWrapping="Wrap" Margin="0,0,0,10" />
+
+            <TextBlock Text="Status:" FontWeight="Bold" />
+            <TextBlock x:Name="StatusBlock" Margin="0,0,0,10" />
+
+            <TextBlock Text="Priority:" FontWeight="Bold" />
+            <TextBlock x:Name="PriorityBlock" Margin="0,0,0,10" />
+
+            <TextBlock Text="Created Date:" FontWeight="Bold" />
+            <TextBlock x:Name="CreatedDateBlock" Margin="0,0,0,10" />
+
+            <TextBlock Text="Updated Date:" FontWeight="Bold" />
+            <TextBlock x:Name="UpdatedDateBlock" Margin="0,0,0,10" />
+
+            <TextBlock Text="Comments:" FontWeight="Bold" Margin="0,0,0,10" />
+            <ListBox x:Name="CommentsListBox" Height="100" />
+        </StackPanel>
+    </Grid>
+</Window>

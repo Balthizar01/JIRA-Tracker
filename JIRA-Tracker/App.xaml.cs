@@ -13,5 +13,6 @@ namespace JIRA_Tracker
     /// </summary>
     public partial class App : Application
     {
+
     }
 }
