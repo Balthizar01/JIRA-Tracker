@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35303.130
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JIRA-Tracker", "JIRA-Tracker\JIRA-Tracker.csproj", "{E0852903-9ADF-4D80-8015-4BC4E52691AB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E0852903-9ADF-4D80-8015-4BC4E52691AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0852903-9ADF-4D80-8015-4BC4E52691AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0852903-9ADF-4D80-8015-4BC4E52691AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0852903-9ADF-4D80-8015-4BC4E52691AB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1D0CACB5-1DDF-4C19-B6A3-58362D8536FF}
+	EndGlobalSection
+EndGlobal
