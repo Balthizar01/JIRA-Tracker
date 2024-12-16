@@ -43,7 +43,7 @@ namespace JIRA_Tracker
 
             // Clear UI fields
             TitleBlock.Text = string.Empty;
-            AuthorBlock.Text = string.Empty;
+            SubmitterBlock.Text = string.Empty;
             DescriptionBlock.Text = string.Empty;
             StatusBlock.Text = string.Empty;
             PriorityBlock.Text = string.Empty;
@@ -55,7 +55,7 @@ namespace JIRA_Tracker
 
             // Populate UI fields with new ticket data
             TitleBlock.Text = ticket.Title;
-            AuthorBlock.Text = ticket.Submitter;
+            SubmitterBlock.Text = ticket.Submitter;
             DescriptionBlock.Text = ticket.Description;
             StatusBlock.Text = ticket.Status;
             PriorityBlock.Text = ticket.Priority;

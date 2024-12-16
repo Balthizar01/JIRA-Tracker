@@ -24,6 +24,9 @@ namespace JIRA_Tracker
     public partial class MainWindow : Window
     {
         private readonly DatabaseService _databaseService = new DatabaseService();
+        private List<Ticket> _allTickets;
+        private List<Ticket> _filteredTickets;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -32,15 +35,39 @@ namespace JIRA_Tracker
 
         private void LoadTickets()
         {
-            try
+
+            _allTickets = _databaseService.GetTickets();
+
+            // Apply default filter to exclude closed tickets
+            FilterTickets(showClosed: false);
+
+        }
+
+        private void FilterTickets(bool showClosed)
+        {
+            if (showClosed)
             {
-                var tickets = _databaseService.GetTickets();
-                TicketsGrid.ItemsSource = tickets;
+                // Display all tickets with the status of "Closed"
+                _filteredTickets = _allTickets.Where(ticket => ticket.Status == "Closed").ToList(); // Only show closed tickets
             }
-            catch(Exception ex)
+            else
             {
-                MessageBox.Show($"Error loading tickets: {ex.Message}");
+                _filteredTickets = _allTickets.Where(ticket => ticket.Status != "Closed").ToList(); // Exclude closed tickets
             }
+
+            // Refresh the DataGrid
+            TicketsGrid.ItemsSource = null;
+            TicketsGrid.ItemsSource = _filteredTickets;
+        }
+
+        private void ShowClosedCheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            FilterTickets(showClosed: true);
+        }
+
+        private void ShowClosedCheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            FilterTickets(showClosed: false);
         }
 
         // Add a new ticket

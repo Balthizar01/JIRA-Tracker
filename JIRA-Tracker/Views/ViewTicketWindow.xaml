@@ -5,43 +5,63 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:JIRA_Tracker"
         mc:Ignorable="d"
-        Title="ViewTicketWindow" Height="900" Width="900" ResizeMode="NoResize">
-    <Grid>
-        <StackPanel Margin="10">
-            <TextBlock Text="Ticket Details" FontSize="16" FontWeight="Bold" Margin="0,0,0,10" />
+        Title="ViewTicketWindow" Height="950" Width="900" ResizeMode="NoResize" Background="{StaticResource BackgroundBrush}">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
 
-            <TextBlock Text="Title:" FontWeight="Bold" />
-            <TextBlock x:Name="TitleBlock" Margin="0,0,0,10" />
+        <!-- Header -->
+        <TextBlock Text="View Ticket" FontSize="20" FontWeight="Bold" Foreground="{StaticResource PrimaryBrush}" Margin="0,0,0,20" Grid.Row="0" />
 
-            <TextBlock Text="Submitter:" FontWeight="Bold" />
-            <TextBlock x:Name="AuthorBlock" Margin="0,0,0,10" />
+        <!-- Ticket Details -->
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <StackPanel VerticalAlignment="Top" Margin="10,0,10,10">
+                <!-- Title -->
+                <TextBlock Text="Title:" FontWeight="Bold" Margin="0,10,0,0" />
+                <TextBlock x:Name="TitleBlock" Padding="5" Margin="0,10,0,0" />
+                
+                <!-- Submitter -->
+                <TextBlock Text="Submitter:" FontWeight="Bold" Margin="0,10,0,0" />
+                <TextBlock x:Name="SubmitterBlock" Padding="5" Margin="0,10,0,0" />
 
-            <TextBlock Text="Description:" FontWeight="Bold" />
-            <TextBlock x:Name="DescriptionBlock" TextWrapping="Wrap" Margin="0,0,0,10" />
+                <!-- Description -->
+                <TextBlock Text="Description:" FontWeight="Bold" Margin="0,10,0,0" />
+                <TextBlock x:Name="DescriptionBlock" TextWrapping="Wrap" Padding="5" Margin="0,10,0,0" />
 
-            <TextBlock Text="Status:" FontWeight="Bold" />
-            <TextBlock x:Name="StatusBlock" Margin="0,0,0,10" />
+                <!-- Status -->
+                <TextBlock Text="Status:" FontWeight="Bold" Margin="0,10,0,0" />
+                <TextBlock x:Name="StatusBlock" Background="{StaticResource SecondaryBrush}" Padding="5" Margin="0,10,0,0" />
 
-            <TextBlock Text="Priority:" FontWeight="Bold" />
-            <TextBlock x:Name="PriorityBlock" Margin="0,0,0,10" />
+                <!-- Priority -->
+                <TextBlock Text="Priority:" FontWeight="Bold" Margin="0,10,0,0" />
+                <TextBlock x:Name="PriorityBlock" Background="{StaticResource SecondaryBrush}" Padding="5" Margin="0,10,0,0" />
 
-            <TextBlock Text="Created Date:" FontWeight="Bold" />
-            <TextBlock x:Name="CreatedDateBlock" Margin="0,0,0,10" />
+                <!-- Created Date -->
+                <TextBlock Text="Created Date:" FontWeight="Bold" Margin="0,10,0,0" />
+                <TextBlock x:Name="CreatedDateBlock" Background="{StaticResource SecondaryBrush}" Padding="5" Margin="0,10,0,0" />
 
-            <TextBlock Text="Updated Date:" FontWeight="Bold" />
-            <TextBlock x:Name="UpdatedDateBlock" Margin="0,0,0,10" />
+                <!-- Updated Date -->
+                <TextBlock Text="Updated Date:" FontWeight="Bold" Margin="0,10,0,0" />
+                <TextBlock x:Name="UpdatedDateBlock" Background="{StaticResource SecondaryBrush}" Padding="5" Margin="0,10,0,0" />
 
-            <TextBlock Text="Parent Ticket:" FontWeight="Bold" />
-            <TextBlock x:Name="ParentTicketBlock" Cursor="Hand" Foreground="Blue" TextDecorations="Underline" Margin="0,0,0,10" />
+                <!-- Parent Ticket -->
+                <TextBlock Text="Parent Ticket:" FontWeight="Bold" Margin="0,10,0,0" />
+                <TextBlock x:Name="ParentTicketBlock" Cursor="Hand" Foreground="{StaticResource PrimaryBrush}" TextDecorations="Underline" Padding="5" Margin="0,10,0,0" />
 
-            <TextBlock Text="Linked Tickets:" FontWeight="Bold" />
-            <ListBox x:Name="LinkedTicketsListBox" Height="100" Margin="0,0,0,10" />
+                <!-- Linked Tickets -->
+                <TextBlock Text="Linked Tickets:" FontWeight="Bold" Margin="0,10,0,0" />
+                <ListBox x:Name="LinkedTicketsListBox" Height="100" Background="{StaticResource BackgroundBrush}" BorderBrush="{StaticResource PrimaryBrush}" Margin="0,10,0,0" />
 
-            <TextBlock Text="Comments:" FontWeight="Bold" Margin="0,0,0,10" />
-            <ListBox x:Name="CommentsListBox" Height="100" />
-            
-            <!-- Back Button -->
-            <Button Content="Back" Click="BackButton_Click" HorizontalAlignment="Center" Margin="0,40,0,0" />
-        </StackPanel>
+                <!-- Comments -->
+                <TextBlock Text="Comments:" FontWeight="Bold" Margin="0,10,0,0" />
+                <ListBox x:Name="CommentsListBox" Height="100" Background="{StaticResource BackgroundBrush}" BorderBrush="{StaticResource PrimaryBrush}" Margin="0,10,0,0" />
+            </StackPanel>
+        </ScrollViewer>
+
+        <!-- Back Button -->
+        <Button Content="Back" Width="100" HorizontalAlignment="Center" Margin="0,10,0,0" Grid.Row="2" Click="BackButton_Click" />
     </Grid>
 </Window>
