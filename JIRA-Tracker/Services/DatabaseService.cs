@@ -4,8 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using JIRA_Tracker.Models;
 
-namespace JIRA_Tracker
+namespace JIRA_Tracker.Services
 {
     public class DatabaseService
     {

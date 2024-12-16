@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JIRA_Tracker
+namespace JIRA_Tracker.Models
 {
     public class Ticket
     {
@@ -18,5 +18,7 @@ namespace JIRA_Tracker
         public DateTime CreatedDate { get; set; }
         public DateTime? UpdatedDate { get; set; }
         public List<Comment> Comments { get; set; } = new List<Comment>();
+        public int? ParentId { get; set; } // For parent-child relationships
+        public List<int> LinkedTicketIds { get; set; } = new List<int>(); // For linked tickets
     }
 }

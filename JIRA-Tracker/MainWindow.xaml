@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:JIRA_Tracker"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="JIRA Tracker" Height="600" Width="900" ResizeMode="NoResize">
+    <Grid Background="#FF777777">
         <!-- Ticket List -->
-        <DataGrid x:Name="TicketsGrid" AutoGenerateColumns="False" SelectionMode="Single" MouseDoubleClick="TicketsGrid_MouseDoubleClick" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10">
+        <DataGrid x:Name="TicketsGrid" AutoGenerateColumns="False" SelectionMode="Single" MouseDoubleClick="TicketsGrid_MouseDoubleClick" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10" BorderThickness="0,0,0,0" Background="White">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="50" />
                 <DataGridTextColumn Header="Title" Binding="{Binding Title}" Width="200" />
-                <DataGridTextColumn Header="Submitter" Binding="{Binding Author}" Width="100" />
+                <DataGridTextColumn Header="Submitter" Binding="{Binding Submitter}" Width="100" />
                 <DataGridTextColumn Header="Status" Binding="{Binding Status}" Width="100" />
                 <DataGridTextColumn Header="Priority" Binding="{Binding Priority}" Width="100" />
                 <DataGridTextColumn Header="Created" Binding="{Binding CreatedDate}" Width="150"/>
@@ -22,9 +22,9 @@
         
         <!-- Buttons -->
         <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center">
-            <Button Content="Add Ticket" Click="AddTicket_Click" />
-            <Button Content="Edit Ticket" Click="EditTicket_Click" Margin="10,0,0,0" />
-            <Button Content="Delete Ticket" Click="DeleteTicket_Click" Margin="10,0,0,0" />
+            <Button Content="Add Ticket" Click="AddTicket_Click" Margin="10,0,0,20" />
+            <Button Content="Edit Ticket" Click="EditTicket_Click" Margin="10,0,0,20" />
+            <Button Content="Delete Ticket" Click="DeleteTicket_Click" Margin="10,0,0,20" />
         </StackPanel>
     </Grid>
 </Window>

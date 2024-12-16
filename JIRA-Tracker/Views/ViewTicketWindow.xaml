@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:JIRA_Tracker"
         mc:Ignorable="d"
-        Title="ViewTicketWindow" Height="525" Width="800">
+        Title="ViewTicketWindow" Height="900" Width="900" ResizeMode="NoResize">
     <Grid>
         <StackPanel Margin="10">
             <TextBlock Text="Ticket Details" FontSize="16" FontWeight="Bold" Margin="0,0,0,10" />
@@ -31,8 +31,17 @@
             <TextBlock Text="Updated Date:" FontWeight="Bold" />
             <TextBlock x:Name="UpdatedDateBlock" Margin="0,0,0,10" />
 
+            <TextBlock Text="Parent Ticket:" FontWeight="Bold" />
+            <TextBlock x:Name="ParentTicketBlock" Cursor="Hand" Foreground="Blue" TextDecorations="Underline" Margin="0,0,0,10" />
+
+            <TextBlock Text="Linked Tickets:" FontWeight="Bold" />
+            <ListBox x:Name="LinkedTicketsListBox" Height="100" Margin="0,0,0,10" />
+
             <TextBlock Text="Comments:" FontWeight="Bold" Margin="0,0,0,10" />
             <ListBox x:Name="CommentsListBox" Height="100" />
+            
+            <!-- Back Button -->
+            <Button Content="Back" Click="BackButton_Click" HorizontalAlignment="Center" Margin="0,40,0,0" />
         </StackPanel>
     </Grid>
 </Window>

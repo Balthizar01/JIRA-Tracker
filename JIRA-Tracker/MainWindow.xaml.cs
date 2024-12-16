@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using LiteDB;
+using JIRA_Tracker.Models;
+using JIRA_Tracker.Services;
 
 namespace JIRA_Tracker
 {

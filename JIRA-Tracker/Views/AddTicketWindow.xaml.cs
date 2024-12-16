@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using JIRA_Tracker.Models;
+using JIRA_Tracker.Services;
 
 namespace JIRA_Tracker
 {
@@ -53,6 +55,22 @@ namespace JIRA_Tracker
             Ticket.Status = (StatusBox.SelectedItem as ComboBoxItem)?.Content.ToString();
             Ticket.Priority = (PriorityBox.SelectedItem as ComboBoxItem)?.Content.ToString();
             Ticket.CreatedDate = DateTime.Now;
+
+            // Parent ID
+            if(int.TryParse(ParentIdBox.Text, out int parentId))
+            {
+                Ticket.ParentId = parentId;
+            }
+
+            // Linked Tickets
+            if (!string.IsNullOrWhiteSpace(LinkedTicketsBox.Text))
+            {
+                Ticket.LinkedTicketIds = LinkedTicketsBox.Text
+                    .Split(',')
+                    .Select(id => int.TryParse(id.Trim(), out int result) ? result : 0)
+                    .Where(id => id > 0)
+                    .ToList();
+            }
 
             DialogResult = true; // Indicates successful save
             Close();

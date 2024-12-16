@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:JIRA_Tracker"
         mc:Ignorable="d"
-        Title="EditTicketWindow" Height="525" Width="800">
+        Title="EditTicketWindow" Height="900" Width="900" ResizeMode="NoResize">
     <Grid>
         <StackPanel Margin="10">
             <TextBlock Text="Edit Ticket" FontSize="16" FontWeight="Bold" Margin="0,0,0,10" />
@@ -33,6 +33,14 @@
                 <ComboBoxItem Content="Medium" />
                 <ComboBoxItem Content="High" />
             </ComboBox>
+
+            <!-- Parent Ticket -->
+            <TextBlock Text="Parent Ticket ID:" />
+            <TextBox x:Name="ParentIdBox" Margin="0,0,0,10" />
+
+            <!-- Linked Ticket -->
+            <TextBlock Text="Linked Tickets (IDs,  comma-separated):" />
+            <TextBox x:Name="LinkedTicketsBox" Margin="0,0,0,10" />
 
             <!-- Comments -->
             <TextBlock Text="Comments:" />
